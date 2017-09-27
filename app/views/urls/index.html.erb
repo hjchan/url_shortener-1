@@ -1,0 +1,23 @@
+<%= link_to "Create" , new_url_path %>
+
+<% if @urls %>
+  <% for x in @urls %>
+    <table>
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Long URL</th>
+          <th>Short URL</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><%= x.id %></td>
+          <td><%= link_to x.long_url, url_path(x) %></td>
+          <td><%= x.short_url %></td>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+<% end %>
